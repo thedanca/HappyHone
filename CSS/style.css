@@ -70,6 +70,131 @@ section:nth-of-type(5) {
 .my-float {
   margin-top: 16px; }
 
+.social-icons .fab {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #FFF;
+  color: rgba(255, 255, 255, 0.8);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+/* Social Icon Mixin */
+/* Social Icons */
+.social-icons {
+  display: flex; }
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 2.5rem;
+  text-decoration: none;
+  transition: all 0.15s ease; }
+  .social-icon:hover {
+    color: white; }
+    .social-icon:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(-50%, -150%); }
+  .social-icon:active {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) inset; }
+  .social-icon--facebook {
+    background: #3b5a9b;
+    color: #fff; }
+    .social-icon--facebook .tooltip {
+      background: #3b5a9b;
+      color: currentColor; }
+      .social-icon--facebook .tooltip:after {
+        border-top-color: #3b5a9b; }
+  .social-icon--instagram {
+    background: #ef5a92;
+    color: #fff; }
+    .social-icon--instagram .tooltip {
+      background: #ef5a92;
+      color: currentColor; }
+      .social-icon--instagram .tooltip:after {
+        border-top-color: #ef5a92; }
+  .social-icon i {
+    position: relative;
+    top: 1px; }
+
+/* Tooltips */
+.tooltip {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 0.8rem 1rem;
+  border-radius: 40px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  text-transform: uppercase;
+  transform: translate(-50%, -100%);
+  transition: all 0.3s ease;
+  z-index: 1; }
+  .tooltip:after {
+    display: block;
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    content: "";
+    border: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: transparent;
+    transform: translate(-50%, 100%); }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: .8;
+  filter: saturate(1.6); }
+
+.title {
+  width: 200px;
+  font-size: 1rem;
+  color: #FFF;
+  text-align: center;
+  letter-spacing: 4px;
+  background: #fff400;
+  padding: 15px 20px;
+  transition: all .5s ease;
+  border-radius: 3px;
+  cursor: pointer; }
+
+.title a {
+  text-decoration: none;
+  color: black; }
+
+.title a:hover {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.4); }
+
+.is-active {
+  box-shadow: 0 20px 5px -10px rgba(0, 0, 0, 0.4);
+  transform: translateY(10px); }
+
+.contac h2 {
+  color: white; }
+
 @media (max-width: 370px) {
   .font-italic {
-    text-align: justify; } }
+    text-align: justify; }
+  .h1, h1 {
+    font-size: 2rem; } }
