@@ -88,8 +88,159 @@ section:nth-of-type(5) {
 .my-float{
 	margin-top:16px;
 }
+
+
+
+.social-icons .fab {
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #FFF;
+	color: rgba(255, 255, 255, 0.8);
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+$color-instagram: #ef5a92;
+$color-linkedin: #006599;
+$color-facebook: #3b5a9b;
+
+/* Social Icon Mixin */
+@mixin social-icon($color) {
+  background: $color;
+  color: #fff;
+
+  .tooltip {
+    background: $color;
+    color: currentColor;
+
+    &:after {
+      border-top-color: $color;
+    }
+  }
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 2.5rem;
+  text-decoration: none;
+  transition: all 0.15s ease;
+
+  &:hover {
+    color: white;
+
+    .tooltip {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(-50%, -150%);
+    }
+  }
+    
+  &:active {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) inset;
+  }
+  
+ 
+ 
+  &--facebook { @include social-icon($color-facebook); }
+  &--instagram { @include social-icon($color-instagram); }
+  
+  
+  i {
+    position: relative;
+    top: 1px;
+  }
+}
+
+/* Tooltips */
+.tooltip {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 0.8rem 1rem;
+  border-radius: 40px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  text-transform: uppercase;
+  transform: translate(-50%, -100%);
+  transition: all 0.3s ease;
+  z-index: 1;
+  
+  &:after {
+    display: block;
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    content: "";
+    border: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: transparent;
+    transform: translate(-50%, 100%);
+  }
+}
+
+
+.title{
+    width:200px;
+    font-size:1rem;
+    color:#FFF;
+    text-align:center;
+    letter-spacing:4px;
+    background: #fff400;
+    padding:15px 20px;
+    transition:all .5s ease;
+    border-radius:3px;
+    cursor:pointer
+}
+.title a{
+    text-decoration:none;
+    color:rgb(0, 0, 0)
+    
+}
+
+.title a:hover{
+    text-decoration: none;
+    color: rgba(0,0,0,.4);;
+}
+
+.is-active{
+    box-shadow:0 20px 5px -10px rgba(0,0,0,.4);
+    
+    transform:translateY(10px);
+}
+
+.contac h2{
+    color: white;
+}
 @media(max-width: 370px){
     .font-italic{
         text-align: justify;
+    }
+
+    .h1, h1 {
+        font-size: 2rem;
     }
 }
